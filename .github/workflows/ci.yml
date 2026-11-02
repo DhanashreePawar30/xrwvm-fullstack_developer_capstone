@@ -7,7 +7,51 @@ on:
     branches: [main]
 
 jobs:
+  lint-python:
+    name: Python Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Flake8
+        run: pip install flake8
+
+      - name: Run Python lint
+        run: |
+          flake8 server/djangoapp server/djangoproj \
+            --select=E9,F63,F7,F82 \
+            --exclude=migrations
+
+  lint-javascript:
+    name: JavaScript Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install frontend dependencies
+        working-directory: server/frontend
+        run: npm ci
+
+      - name: Run JavaScript ESLint
+        working-directory: server/frontend
+        run: npx eslint src --ext .js,.jsx --quiet
+
   django-check:
+    name: Django Configuration Check
     runs-on: ubuntu-latest
 
     steps:
