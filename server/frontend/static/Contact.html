@@ -4,17 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Best Cars Dealership</title>
+
     <link rel="stylesheet" href="bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+        .navbar {
+            background: #172b4d;
+            padding: 16px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .navbar .brand {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .navbar a.active {
+            color: #ffc857;
+            font-weight: bold;
+        }
+        .hero {
+            background: #203b63;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            background: white;
+            padding: 28px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,.1);
+        }
+        .contact-layout img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .contact-details h2 {
+            color: #172b4d;
+        }
+        .contact-details p {
+            line-height: 1.8;
+        }
+        .contact-details a {
+            color: #1769aa;
+            text-decoration: none;
+        }
+        footer {
+            background: #172b4d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 45px;
+        }
+        @media (max-width: 650px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container mt-5">
+    <nav class="navbar">
+        <a class="brand" href="index.html">Best Cars Dealership</a>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="About.html">About Us</a>
+            <a class="active" href="Contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <header class="hero">
         <h1>Contact Us</h1>
-        <p>We would love to hear from you!</p>
-        <h3>Best Cars Dealership</h3>
-        <p>Email: contact@bestcars.com</p>
-        <p>Phone: +1 800 123 4567</p>
-        <p>Address: Best Cars Dealership</p>
-    </div>
+        <p>We are here to help you find your perfect car.</p>
+    </header>
+
+    <main class="container">
+        <div class="contact-layout">
+            <div>
+                <img src="contactus.png" alt="Contact Best Cars Dealership">
+            </div>
+
+            <section class="contact-details">
+                <h2>Get in Touch</h2>
+                <p>
+                    Have a question about our vehicles or services?
+                    Contact the Best Cars Dealership team. We will be happy
+                    to assist you.
+                </p>
+
+                <h3>Best Cars Dealership</h3>
+                <p><strong>Address:</strong> 123 Main Street, Chicago, IL 60601, USA</p>
+                <p><strong>Phone:</strong> <a href="tel:+18001234567">+1 800 123 4567</a></p>
+                <p><strong>Email:</strong> <a href="mailto:contact@bestcars.com">contact@bestcars.com</a></p>
+                <p><strong>Business Hours:</strong><br>
+                    Monday - Friday: 9:00 AM - 6:00 PM<br>
+                    Saturday: 10:00 AM - 4:00 PM<br>
+                    Sunday: Closed
+                </p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Best Cars Dealership. All rights reserved.</p>
+    </footer>
 </body>
 </html>
